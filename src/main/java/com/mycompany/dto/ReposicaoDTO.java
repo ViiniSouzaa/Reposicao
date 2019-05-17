@@ -3,22 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.negocio;
+package com.mycompany.dto;
 
-import java.util.Date;
 import lombok.Builder;
 import lombok.Data;
 
 @Data
 @Builder
-public class Reposicao {
+public class ReposicaoDTO {
+    
     private String motivo;
-    private Disciplina disciplina;
+    private DisciplinaDTO disciplina;
     private int numero_aulas;
     private TurnosEnum turno;
-    private Date data_prevista;
-    private Date data_reposicao;
-    private Docente docente;
+    private DataAulaDTO data_prevista;
+    private DataAulaDTO data_reposicao;
+    private DocenteDTO docente;
     private boolean presencial;
     private boolean aprovado;
     private String diarioDeClasse;
