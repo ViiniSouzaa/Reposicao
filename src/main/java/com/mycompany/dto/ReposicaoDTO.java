@@ -12,6 +12,7 @@ import lombok.Data;
 @Builder
 public class ReposicaoDTO {
     
+    private Long id;
     private String motivo;
     private DisciplinaDTO disciplina;
     private int numero_aulas;

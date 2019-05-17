@@ -8,6 +8,8 @@ import lombok.Data;
 @Data
 @Builder
 public class DataAulaDTO {
-    Date dataAula;
-    List<HorarioAula> aulas;
+    
+    private Long id;
+    private Date dataAula;
+    private List<HorarioAula> aulas;
 }

@@ -9,4 +9,5 @@ class DisciplinaDTO {
     private Long id;
     private String nome;
     private TurmaDTO Turma;
+    private DocenteDTO docente;
 }
