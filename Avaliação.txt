@@ -1,0 +1,81 @@
+-> Manutenibilidade
+
+- O projeto contém alguma descrição arquitetural de atividades para auxiliar no entendimento das regras de negócio?
+Não, não há nenhum diagrama ou qualquer comentário no código para ajudar no entendimento
+
+- O projeto contém alguma descrição arquitetural de comunicação/sequência para auxiliar no entendimento do fluxo de comunicação entre as classes?
+Não há nenhum tipo de descrição, porém foi possível entender o fluxo por conhecimento prévio da regra de negócio e uma separação boa entre os pacotes
+
+- As classes/métodos são curtos o suficiente para facilitar o entendimento?
+Sim, não há nenhum método que faz mais de uma ação
+
+- A decomposição da arquitetura em pacotes/classes beneficia ao máximo a manutenibilidade?
+Em partes, entendemos muito bem a distribuição porém, pelo nosso entendimento achamos que tem um pacote a mais que não seria utilizado, não foi possível validar isso pois o programa não foi feito por completo
+
+Parecer: Foi fácil para compreender o fluxo, porém a regra de negócio ficou um pouco confusa por conta desse pacote a mais
+
+->  Princípios de desenvolvimento
+
+- O projeto usa inversão de dependência de forma adequada?
+Não pois não é implementado o factory method
+
+- O projeto usa o princípio open-closed quando conveniente?
+Foi utilizado na classe AbstractNegocio para que as classes AlunoNegocio e DocenteNegocio conseguissem herdar os métodos
+
+- O projeto usa o princípio de substituição de Liskov quando conveniente?
+Não, poderia ter sido implementado uma classe Pessoa
+
+- O projeto usa o princípio de segregação de interfaces quanto conveniente?
+Sim, na classe abstrata há somente métodos que todas as outras classes utilizam
+
+- O projeto evita repetição frequente de código?
+Sim, utilizaram o conceito DRY corretamente nas classes do pacote negocio
+
+- As rotinas implementadas nos métodos são simples de entender e alterar?
+Sim, o fluxo é bem compreensível, o que faltou foi uma padronização de código a respeito do nome de variáveis
+
+- O acoplamento entre as classes é o menor possível dentro do contexto do projeto?
+Poderia ser implementado o factory method para melhorar mas em um contexto geral as classes não dependem tanto umas das outras
+
+- As classes estão coesas?
+Relativamente, pois as classes cumprem o que prometem, porém as classes dentro do pacote DTOs não possuem utilidade uma vez que utilizaram Entitys
+
+-> Estruturas arquiteturais
+
+- A estrutura de dados foi implementada corretamente?
+Sim, as classes entitys foram bem estruturadas e utilizadas mapeadas corretamente, inclusive foram criados os DTOs apesar de não serem utilizados.
+
+- A estrutura de camadas foi implementada corretamente?
+Sim, DTOs e Entitys para o tratamento dos dados, DAOs para o tratamento de acesso. Apesar de terem separado as regras de negócios das classes de tratamento de dados
+
+- O Github foi corretamente utilizado para representar/controlar a estrutura de alocação da equipe?
+Não foi possível avaliar de forma correta, pois apenas um usuário realizou commits no diretório do grupo e as mensagens são extremamente simples e pouco detalhadas.
+
+-> Padrões de projeto
+
+- Algum padrão de projeto foi usado quando conveniente?
+Não foi reconhecido nenhum padrão de projeto, nem mesmo os utilizados em sala como Template method ou factory method
+
+- A estrutura do padrão de projeto foi implementada corretamente?
+Não possui
+
+-> Bibliotecas
+
+- Alguma biblioteca foi usada quando conveniente?
+Sim, porém apenas as libs nativas do Java, como o java.util e Maven
+
+- Algum mecanismo de gerenciamento de bibliotecas foi usado? (ex: Maven)
+Sim, foi utilizado juntamente com spring boot
+
+ -> Framework
+
+- Algum framework foi usado quando conveniente?
+Sim, JPA, Lombok e dependências do spring boot
+
+- O framework adotado gera algum benefício claramente perceptível?
+Sim, pois através deles foi possível reduzir a quantidade de código, tornando o código mais facilmente compreensível.
+
+Avaliação Geral
+No sistema foi implementado alguns dos princípios SOLID e DRY na medida que foi possível, pois as classes contendo as regras negócios foram bem poucas e não houve nenhuma validação do core do sistema, que era o agendamento de uma reposição.
+Os únicos requisitos que foram feitos foi o de incluir e alterar docente e aluno, também foi implementado o de validação de RA, porém não foi utilizado por nenhuma classe até então.
+Consideramos ser um código de fácil manutenção e que o código foi bem reaproveitado, apesar de ser apenas 6 métodos, muito pouco para podermos avaliar realmente a eficácia e qualidade do código.

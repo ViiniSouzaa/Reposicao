@@ -15,9 +15,12 @@ public class ReposicaoDTO {
     private Long id;
     private String motivo;
     private DisciplinaDTO disciplina;
+    //utilizar lowerCamel
     private int numero_aulas;
     private TurnosEnum turno;
+    //utilizar lowerCamel
     private DataAulaDTO data_prevista;
+    //utilizar lowerCamel
     private DataAulaDTO data_reposicao;
     private DocenteDTO docente;
     private boolean presencial;

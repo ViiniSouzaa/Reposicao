@@ -22,5 +22,6 @@ public class DataAula implements Serializable {
     @Id @GeneratedValue
     private Long id;
     private Date dataAula;
+    //faltou anotação @Enumerated (EnumType.STRING) para retornar a String do Enum
     private List<HorarioAula> aulas;
 }
