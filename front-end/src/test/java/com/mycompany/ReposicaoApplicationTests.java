@@ -1,4 +1,4 @@
-package com.mycompany.Reposicao;
+package com.mycompany;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
