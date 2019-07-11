@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Gerencia Pais</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        </head>
+    <body>
+        <div class="container">
+            <div class="jumbotron">
+                <h1>Gerenciamento de Docentes</h1>
+                <p>Essa página tem a responsabilidade de fazer o gerenciamento de docentes da Universidade </p>
+            </div>
+            <div class="col">
+                <form action="/docente/cria" method="post">
+                    <div class="form-group">
+                        <label for="nome">Nome:</label>
+                        <input value="${(docenteAtual.nome)!}" name="nome" type="text" class="form-control" id="nome">
+                    </div>
+                    <div class="form-group">
+                        <label for="inscricao">Nome:</label>
+                        <input value="${(docenteAtual.inscricao)!}" name="inscricao" type="text" class="form-control" id="inscricao">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Criar</button>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <table class="table table-striped table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Inscricao</th>
+                            <th>Nome</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <#list docentes as docente>
+                            <tr>
+                                <td>${docente.inscricao}</td>
+                                <td>${docente.nome}</td>
+                                <td>
+                                    <a href="/docente/prepara-alterar?id=${docente.id}">Alterar</a>
+                                    <a href="/docente/excluir?id=${docente.id}">Excluir</a>
+                                </td>
+                            </tr>
+                        <#list>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
