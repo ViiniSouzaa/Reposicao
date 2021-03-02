@@ -26,7 +26,9 @@ public class Reposicao implements Serializable {
     private String motivo;
     @ManyToOne
     private Disciplina disciplina;
+    //utilizar padrão lowerCamel
     private int numero_aulas;
+    //não é necessário a anotação do enumerated pois irá salvar a String no banco e não o id
     @Enumerated (EnumType.STRING)
     private TurnosEnum turno;
     @OneToOne

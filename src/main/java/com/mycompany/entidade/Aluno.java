@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @Entity
 public class Aluno implements Serializable {
-    
+    //poderia utilizar o RA como chave primária
     @Id @GeneratedValue
     private Long id;
     private String RA;

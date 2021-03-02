@@ -21,6 +21,7 @@ public class Disciplina implements Serializable {
     private Long id;
     private String nome;
     
+    //utilizar lowerCamel para padronizar
     @ManyToOne
     private Turma Turma;
     
